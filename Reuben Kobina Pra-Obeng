@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Reuben Pra-Obeng — Portfolio</title>
+
+<!-- Font + Chart.js -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+  :root{
+    --bg:#041018; --card:#071827; --muted:#9aa4b2; --accent:#6ee7b7;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color:#e8f7f1;
+  }
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,#041018,#071827);-webkit-font-smoothing:antialiased;}
+  .container{max-width:1100px;margin:36px auto;padding:20px;display:grid;grid-template-columns:360px 1fr;gap:18px;}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.03);}
+  .left{position:sticky;top:28px;align-self:start}
+  .avatar{width:88px;height:88px;border-radius:12px;background:linear-gradient(135deg,#0f4b4d,#0b7a72);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:30px;color:#e8fff6}
+  h1{margin:0;font-size:20px}
+  .muted{color:var(--muted);font-size:13px}
+  .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(110,231,183,0.10);color:var(--accent);font-weight:700;font-size:13px}
+  .skills{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+  .skillRow{display:flex;gap:10px;align-items:center}
+  .skillLabel{min-width:130px;color:var(--muted);font-size:13px}
+  .bar{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden;flex:1}
+  .bar > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#6ee7b7,#46c59b)}
+  .twoCols{display:grid;grid-template-columns:1fr 340px;gap:18px}
+  .sectionTitle{font-weight:700;font-size:13px;margin-bottom:8px}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:16px}
+  .btn{background:var(--accent);color:#052018;padding:10px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+  .outline{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:9px 10px;border-radius:10px;cursor:pointer}
+  @media (max-width:980px){
+    .container{grid-template-columns:1fr;padding:14px}
+    .twoCols{grid-template-columns:1fr}
+  }
+  a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left -->
+    <aside class="card left" role="navigation" aria-label="Profile summary">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div>
+          <h1>Reuben Pra-Obeng</h1>
+          <div class="muted" style="margin-top:6px">Electrical & Electronics Engineer</div>
+        </div>
+        <div class="avatar" aria-hidden>RP</div>
+      </div>
+
+      <p class="muted" style="margin-top:12px">
+        Dynamic, results-oriented electrical/electronics graduate with strengths in process automation, control systems, and occupational safety. Proven leadership & hands-on industrial experience.
+      </p>
+
+      <div style="margin-top:14px" class="muted">
+        <div><strong>Email:</strong> <a href="mailto:kobinapraobeng@gmail.com">kobinapraobeng@gmail.com</a></div>
+        <div><strong>Phone:</strong> <a href="tel:+233279402121">+233 27 940 2121</a></div>
+        <div><strong>Location:</strong> Tema / Accra, Ghana</div>
+        <div><strong>DOB:</strong> 9 July 2002</div>
+      </div>
+
+      <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:14px 0">
+
+      <div>
+        <div class="sectionTitle">Skills</div>
+        <div class="skills" id="skillsList">
+          <!-- inserted by JS -->
+        </div>
+      </div>
+
+      <div style="margin-top:14px">
+        <div class="sectionTitle">Quick facts</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="badge">BSc KNUST (2024)</span>
+          <span class="badge">Adv Dip OHS (2024)</span>
+          <span class="badge">GESA President (2023–24)</span>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;display:flex;gap:8px;">
+        <button id="downloadBtn" class="btn" title="Download this page as HTML">Download HTML</button>
+        <button class="outline" onclick="window.print()">Print</button>
+      </div>
+
+      <div style="margin-top:12px;font-size:12px;color:var(--muted)">
+        Source: uploaded CV used to prefill content.
+      </div>
+    </aside>
+
+    <!-- Right -->
+    <main class="card" role="main">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div class="muted">Profile</div>
+          <h2 style="margin:6px 0 0">Career Objective</h2>
+        </div>
+        <div class="muted">Minimal • Responsive • GitHub Pages ready</div>
+      </div>
+
+      <p class="muted" style="margin-top:10px">
+        Dynamic and results-oriented electrical/electronics engineering graduate seeking to contribute to organisations by leveraging strengths in process automation, control systems, safety management and leadership. Skilled at stakeholder engagement, troubleshooting and improving operational uptime.
+      </p>
+
+      <div style="margin-top:16px" class="twoCols">
+        <section>
+          <div class="sectionTitle">Experience</div>
+          <div style="display:flex;flex-direction:column;gap:12px;color:var(--muted)">
+            <div>
+              <strong>National Service Officer — National Petroleum Authority</strong><br><span class="muted">Oct 2024 — Oct 2025</span>
+              <div style="margin-top:6px">Inspected downstream petroleum facilities for regulatory compliance, monitored product quality/quantity and safety, prepared inspection reports and recommended corrective actions.</div>
+            </div>
+
+            <div>
+              <strong>Intern — Volta Aluminium Company (VALCO)</strong><br><span class="muted">Sep 2023 — Dec 2023</span>
+              <div style="margin-top:6px">Diagnosed HMI & ladder logic issues, reduced downtime, and assisted with plant troubleshooting.</div>
+            </div>
+
+            <div>
+              <strong>Intern — OLAM Ghana Tomato Paste Factory</strong><br><span class="muted">Sep 2022 — Dec 2022</span>
+              <div style="margin-top:6px">Recalibrated instruments, assisted automation & electrical panel installations, and performed safety inspections.</div>
+            </div>
+
+            <div>
+              <strong>Electrical Technician Assistant — BKD Electricals</strong><br><span class="muted">Sep 2021 — Dec 2021</span>
+              <div style="margin-top:6px">Installation, conduit work, and component testing for commissioning.</div>
+            </div>
+
+            <div>
+              <strong>Sales Attendant — OldRock Company</strong><br><span class="muted">Mar 2020 — Jul 2020</span>
+              <div style="margin-top:6px">Customer service, inventory tracking and promotions support.</div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px">
+            <div class="sectionTitle">Education</div>
+            <div style="color:var(--muted)">
+              <div><strong>BSc Electrical/Electronics Engineering — KNUST</strong> (2024)</div>
+              <div style="margin-top:6px"><strong>Advanced Diploma — Occupational Safety & Health Management</strong> — Imperial College of Mines & Safety (May 2024)</div>
+              <div style="margin-top:6px"><strong>General Science — St. Augustine's College</strong> (WASSCE, 2020)</div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px">
+            <div class="sectionTitle">Projects</div>
+            <ul style="color:var(--muted);margin-top:6px;padding-left:18px">
+              <li><strong>EMI effect of HV lines on underground petroleum pipelines</strong> — EMI assessment using CDEGS (HIFREQ) and IoT/ML mitigation proposals.</li>
+              <li style="margin-top:8px"><strong>Adaptive Solar Tracker (ML)</strong> — Reinforcement-learning-based tracker to optimise panel orientation in real time.</li>
+            </ul>
+          </div>
+        </section>
+
+        <aside>
+          <div class="sectionTitle">Skills Overview</div>
+          <canvas id="radarChart" style="width:100%;height:260px"></canvas>
+
+          <div style="margin-top:16px">
+            <div class="sectionTitle">Leadership & Membership</div>
+            <div style="color:var(--muted);margin-top:6px">
+              <ul style="padding-left:18px">
+                <li><strong>President</strong>, GESA KNUST (2023–2024) — Established learning area & endowment fund</li>
+                <li style="margin-top:8px"><strong>Academic Board Chairperson</strong>, University Hall (Jan–Sep 2023)</li>
+                <li style="margin-top:8px"><strong>Senior Prefect / SRC President</strong>, St. Augustine's College (2019–2020)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="sectionTitle">Certifications</div>
+            <div class="muted">Advanced Diploma — Occupational Safety & Health Management (May 2024)</div>
+          </div>
+        </aside>
+      </div>
+
+      <footer>Referees available upon request • Built from uploaded CV</footer>
+    </main>
+  </div>
+
+<script>
+/* Robust initialisation and fallbacks.
+   - Wait for DOMContentLoaded
+   - Build skill bars and radar chart reliably
+   - Download page HTML (self-contained) on button click
+*/
+
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const skills = [
+      {label:'Process Automation', value:92},
+      {label:'HMI & Ladder Logic', value:86},
+      {label:'Safety Management', value:88},
+      {label:'Electrical Installations', value:80},
+      {label:'Diagnostics & Troubleshooting', value:85},
+      {label:'AI / Prompt Eng.', value:64},
+      {label:'MS Office', value:78}
+    ];
+
+    // populate left skill bars
+    const skillsList = document.getElementById('skillsList');
+    skillsList.innerHTML = '';
+    skills.slice(0,6).forEach(s=>{
+      const row = document.createElement('div');
+      row.className = 'skillRow';
+      row.innerHTML = `<div class="skillLabel">${s.label}</div><div class="bar" aria-hidden><i style="width:${Math.max(3, Math.min(100,s.value))}%"></i></div><div style="min-width:34px;text-align:right;color:var(--muted);font-size:13px">${s.value}%</div>`;
+      skillsList.appendChild(row);
+    });
+
+    // radar chart
+    const radarCtx = document.getElementById('radarChart').getContext('2d');
+    const labels = skills.map(s=>s.label);
+    const values = skills.map(s=>s.value);
+
+    // destroy existing chart if exists (safety when Hot reloading in some environments)
+    if (window._radarChartInstance) {
+      try { window._radarChartInstance.destroy(); } catch(e){ /* ignore */ }
+    }
+
+    window._radarChartInstance = new Chart(radarCtx, {
+      type: 'radar',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Skill strength',
+          data: values,
+          borderWidth: 2,
+          pointRadius: 3,
+          fill: true,
+          backgroundColor: 'rgba(110,231,183,0.14)',
+          borderColor: 'rgba(110,231,183,0.95)',
+          pointBackgroundColor: 'rgba(110,231,183,0.95)'
+        }]
+      },
+      options: {
+        scales: {
+          r: {
+            beginAtZero: true,
+            suggestedMax: 100,
+            grid: { color: 'rgba(255,255,255,0.03)' },
+            angleLines: { color: 'rgba(255,255,255,0.03)' },
+            ticks: { color: '#9aa4b2', stepSize: 20 }
+          }
+        },
+        plugins: { legend: { display: false } },
+        maintainAspectRatio: false
+      }
+    });
+
+    // Download HTML button: serializes current document into a downloadable blob
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      try {
+        // Clone documentElement and strip out the download button label to avoid recursion
+        const clone = document.documentElement.cloneNode(true);
+        // Optional: remove any scripts that might cause issues on open (we will keep inlined script)
+        // Replace the download button label so saved file doesn't auto-download again without user action
+        const clonedHtml = clone.outerHTML.replace(/Download HTML/g, 'Download (saved copy)');
+        const blob = new Blob([clonedHtml], {type: 'text/html;charset=utf-8'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'reuben-pra-obeng-portfolio.html';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      } catch (err) {
+        console.error('Download failed:', err);
+        alert('Download failed — see console for details.');
+      }
+    });
+
+    // small UX: double-click email/phone copies to clipboard
+    document.querySelectorAll('a[href^="mailto:"], a[href^="tel:"]').forEach(el=>{
+      el.addEventListener('dblclick', (ev)=>{
+        ev.preventDefault();
+        const text = el.textContent.trim();
+        navigator.clipboard?.writeText(text).then(()=> {
+          // little non-blocking notice
+          const n = document.createElement('div');
+          n.textContent = 'Copied to clipboard';
+          n.style.position='fixed'; n.style.right='16px'; n.style.bottom='16px';
+          n.style.background='rgba(0,0,0,0.6)'; n.style.color='#fff'; n.style.padding='8px 12px';
+          n.style.borderRadius='8px'; n.style.zIndex=9999;
+          document.body.appendChild(n);
+          setTimeout(()=>n.remove(),1200);
+        });
+      });
+    });
+
+    console.log('Portfolio initialized successfully.');
+  } catch (err) {
+    console.error('Initialization error:', err);
+    alert('There was an error initializing the page. Open the browser console for details.');
+  }
+});
+</script>
+</body>
+</html>
